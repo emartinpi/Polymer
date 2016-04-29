@@ -1,0 +1,41 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="user-view">
+    <style>
+    </style>
+
+    <template>
+      Nombre:
+      <div>{{user.manager.name}}</div>
+      <div>{{user.manager.surname}}</div>
+    </template>
+
+    <script>
+      Polymer({
+        is: 'user-view',
+        listeners: {
+          'tap': 'onTap'
+        },
+        onTap: function() {
+          this.reassignManager()
+        },
+        reassignManager: function() {
+          console.log('manager changed');
+          this.user.manager.name = 'Edu';
+          this.user.manager.surname = 'Kairos';
+          // Notification required for binding to update!
+          this.notifyPath('user.manager', this.user.manager);
+        },
+        ready: function() {
+          this.user = {
+            manager: {
+              name: 'Pepe',
+              surname: 'Martin'
+            }
+          }
+        }
+      });
+    </script>
+
+</dom-module>
+
