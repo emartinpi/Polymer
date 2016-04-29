@@ -1,0 +1,43 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../component.html">
+
+
+<dom-module id="example-demo">
+  <template>
+    <style>
+      :host {
+        font-family: sans-serif;
+      };
+      b {
+        cursor: pointer;
+      }
+    </style>
+  
+
+    <h3>Demo</h3>
+    <b on-tap="onTap">En padre</b></br>
+    [[fn]] {{ln}}
+    </br></br>
+    
+    <user-view first-name="{{fn}}" last-name="{{ln}}"></user-view>
+  </template>
+  
+  <script>
+    Polymer({
+      is: "example-demo",
+      onTap: function() {
+        console.log('Atributes changed from parent');
+        this.fn = 'Jorge';
+        this.ln = 'Casar';
+      },
+      ready: function() {
+        //console.log('example-demo ready');
+        this.fn = 'Edu';
+        this.ln = 'Martin';
+      },
+      attached: function() {
+        //console.log('example-demo attached');
+      }
+    });
+  </script>
+</dom-module>

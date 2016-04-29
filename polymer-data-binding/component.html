@@ -1,0 +1,43 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="user-view">
+    <style>
+      b {
+        cursor: pointer;
+      }
+    </style>
+
+    <template>
+      <b on-tap="onTap">En hijo</b></br>
+      [[firstName]] {{lastName}}
+    </template>
+
+    <script>
+      Polymer({
+        is: 'user-view',
+        properties: {
+          firstName: {
+            type: String,
+            notify: true
+          },
+          lastName: {
+            type: String,
+            notify: true
+          }
+        },
+        onTap: function() {
+          console.log('Atributes changed from children');
+          this.firstName = 'Monica';
+          this.lastName = 'Rodriguez';
+        },
+        ready: function() {
+          //console.log('user-view ready');
+        },
+        attached: function() {
+          //console.log('user-view attached');
+        }
+      });
+    </script>
+
+</dom-module>
+
