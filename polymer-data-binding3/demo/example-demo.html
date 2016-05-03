@@ -1,0 +1,25 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../component.html">
+
+
+<dom-module id="example-demo">
+  <template>
+    <style>
+      :host {
+        font-family: sans-serif;
+      }
+    </style>
+  
+
+    <h3>Demo</h3>
+
+    <!--Cuidado al inicializar atributo manager con formato JSON y las comillas-->
+    <user-view first="Edu" last="Martin" manager='{"fn":"Pepe", "ln":"Sanchez"}'></user-view>
+  </template>
+  
+  <script>
+    Polymer({
+      is: "example-demo",
+    });
+  </script>
+</dom-module>
