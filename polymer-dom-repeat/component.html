@@ -1,0 +1,17 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="user-view">
+  
+  <template>
+    <div> Employee list: </div>
+    <template is="dom-repeat" items="{{employees}}">
+        <div># <span>{{index}}</span></div>
+        <div>First name: <span>{{item.first}}</span></div>
+        <div>Last name: <span>{{item.last}}</span></div>
+        <button on-click="order">Click me!</button>
+    </template>
+  </template>
+
+  <script src="component.js"></script>
+
+</dom-module>
