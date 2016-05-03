@@ -1,0 +1,12 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="bind-array-element">
+
+  <template>
+    <div>[[arrayItem(myArray.*.name, 0, 'name')]]</div>
+    <div>[[arrayItem(myArray.*, 1, 'name')]]</div>
+  </template>
+
+  <script src="component.js"></script>
+
+</dom-module>
