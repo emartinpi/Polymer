@@ -1,0 +1,13 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="user-view">
+  
+  <template>
+    <!-- Sub-property is updated via property binding. -->
+    <input value="{{user.name::input}}" placeholder="user name">
+    <input value="{{manager.name.first::input}}" placeholder="manager name">
+  </template>
+
+  <script src="component.js"></script>
+
+</dom-module>
